@@ -1,16 +1,57 @@
 <template lang="pug">
   main#home
-    h1 Home
+    .wrapper
+      .wrapper__title
+        h3.title Article
+      .container__article
+        Article(v-for="product in products" :key="product.id" :product="product")
 </template>
 
 <script>
+
+import Article from '../components/Article'
+
  export default {
+   components : {
+     Article
+   },
    data: () => {
-     return {}
+     return {
+       products: [
+         {
+           id:1,
+           titre:'Nike Air Jordan',
+           description: 'Nike Air Jordan Footwear basketball sneakers.',
+           price: 99,
+           img: require('../assets/img/img5.png')
+         },
+         {
+           id:2,
+           titre:'Nike Air Jordan',
+           description: 'Nike Air Jordan Footwear basketball sneakers.',
+           price: 40,
+           img:require('../assets/img/img5.png')
+         },
+         {
+           id:3,
+           titre:'Nike Air Jordan',
+           description: 'Nike Air Jordan Footwear basketball sneakers.',
+           price: 60,
+           img:require('../assets/img/img5.png')
+         }
+         ]
+     }
    }
   }
 </script>
 
 <style lang="scss" scoped>
-  
+
+  .container__article {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+  }
+
 </style>

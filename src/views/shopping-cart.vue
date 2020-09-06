@@ -1,6 +1,8 @@
 <template lang="pug">
   main#shopping-cart
-    h1 shopping-cart
+    .wrapper
+      .wrapper__title
+        h3.title shopping-cart
 </template>
 
 <script>

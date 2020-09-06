@@ -1,6 +1,8 @@
 <template lang="pug">
   main#wish-list
-    h1 wish-list
+    .wrapper
+      .wrapper__title
+        h3.title wish-list
 </template>
 
 <script>

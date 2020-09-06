@@ -1,6 +1,8 @@
 <template lang="pug">
   main#user-settings
-    h1 user-settings
+    .wrapper
+      .wrapper__title
+        h3.title user-settings
 </template>
 
 <script>

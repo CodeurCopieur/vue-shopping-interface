@@ -23,44 +23,38 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
 <style lang="scss">
+@import "assets/scss/index.scss";
 
 body {
-  @import "assets/scss/index.scss";
+
   margin: 0;
 
-    #app {
-      
+  #app {
 
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
 
     nav {
-
       padding: 0.8rem 2.4rem;
       background: rgba(255, 255, 255, 0.97);
-      width: 100%;
       z-index: 2;
       box-shadow: 0 2px 4px -3px #41b883;
       .nav-container {
-
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1050px;
+        max-width: 1070px;
         margin: 0 auto;
         #logo {
           height: 32px;
@@ -87,14 +81,34 @@ body {
       }
     }
 
-      .fade-enter , .fade-leave-to {
+    .fade-enter , .fade-leave-to {
       opacity: 0;
       transform: translateX(2em);
     }
     .fade-enter-active , .fade-leave-active {
       transition: all .3s ease-in-out;
     }
+
+    main {
+      .wrapper {
+        max-width: 1070px;
+         margin: 0 auto;
+
+        .wrapper__title {
+          position: relative;
+          margin-bottom: 30px;
+          margin-top: 15px;
+
+          .title {
+            text-transform: uppercase;
+            color: #2B2D42;
+            font-weight: 700;
+          }
+        }
+      }
     }
+  }
+
 }
 
 </style>
