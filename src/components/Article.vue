@@ -50,7 +50,6 @@ a {
   position: relative;
   width: 320px;
   height: 400px;
-  //background-color: $dark-color;
   padding: 8rem 2rem 0;
   color: $white-color;
   overflow: hidden;

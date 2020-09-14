@@ -23,7 +23,6 @@
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
 
 
 export default {
@@ -43,7 +42,7 @@ body {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+    color: #272D40;
 
     nav {
       padding: 0.8rem 2.4rem;
@@ -69,10 +68,14 @@ body {
 
           li {
             cursor: pointer;
-
             a {
-
+              
               i {
+                color: #272D40;
+                transition: .5s;
+              }
+
+              &:hover i {
                 color: #41b883;
               }
             }
