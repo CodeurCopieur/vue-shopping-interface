@@ -43,6 +43,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #272D40;
+    transition: .5s;
 
     nav {
       padding: 0.8rem 2.4rem;

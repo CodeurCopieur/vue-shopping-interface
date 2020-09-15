@@ -8,7 +8,7 @@
           p.card__txt {{ product.description }}
           .wrapper__btns
             a(href="#").card__like
-              input(type="checkbox", name="checkHeart", :id="product.id")
+              input(type="checkbox", name="checkHeart", :id="product.id", :value="product.id" @click="likeProduct(product.id)")
               label(:for="product.id")
                 i.fas.fa-heart
             a(href="#").card__buy 
@@ -25,6 +25,11 @@
   },
    data: () => {
      return {}
+   },
+   methods: {
+     likeProduct(idproduct) {
+       this.$emit('productLiked', idproduct)
+     }
    }
   }
 </script>

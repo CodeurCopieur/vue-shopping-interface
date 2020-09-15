@@ -2,18 +2,33 @@
   main#home
     .wrapper
       .wrapper__title
-        h3.title Article
+        h3.title Home
 
       //Search display
 
       .form.input-effect
         input(type="text", v-model="searchVal" class="form__input")
         label Search
-        span.focus-border
+        span.focus-borde
+
+      //Message resultat
+      .container
+        transition(name="fade" mode="out-in")
+          .alert(v-if="searchVal && filteredShoes.length >= 1")
+            p {{ filteredShoes.length }} 
+              |resultat
+              span(v-if="filteredShoes.length >= 2") s
+          .alert.alert-danger(v-if="filteredShoes.length == []")
+            p Désolé, aucun resultat
+
+
+
       
       //Cards display
       .container__article
-        Article(v-for="product in filteredShoes" :key="product.id" :product="product")
+        Article(v-for="product in filteredShoes" :key="product.id" :product="product" @productLiked="liked")
+
+      //li(v-for="like in likes") {{ like }}
 </template>
 
 <script>
@@ -49,7 +64,8 @@ import Article from '../components/Article'
            img:require('../assets/img/img1.png')
          }         
          ],
-         searchVal: ''
+         searchVal: '',
+         likes: []
      }
    },
    computed: {
@@ -60,7 +76,10 @@ import Article from '../components/Article'
      }
    },
    methods: {
-     
+     liked(product) {
+       this.likes.push(product)
+       console.log(this.likes);
+     }
    }
   }
 </script>
@@ -87,7 +106,7 @@ import Article from '../components/Article'
         & ~ label {
           top: -16px;
           font-size: 12px;
-          color: #4caf50;
+          color: #41b883;
           transition: 0.3s;
         }
 
@@ -149,16 +168,40 @@ import Article from '../components/Article'
       font-weight: 700;
     }
 
-    .focus-border {
+  }
 
+  .container {
+    position: relative;
+    .alert {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      width: 30%;
+      border: 1px solid #41b883;
+      background-color: #41b883;
+      cursor: pointer;
+      color: #fff;
+      padding: .25rem 1.25rem;
+      border-radius: .25rem;
+      text-align: center;
+      margin: 20px auto;
+      transition: .5s;
+
+      &:hover {
+        color: #41b883;
+        background-color: #fff;
+      }
     }
   }
+  
 
   .container__article {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-
+    margin-top: 80px;
   }
 
 </style>
