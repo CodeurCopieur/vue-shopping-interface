@@ -34,7 +34,7 @@
             p.card__txt {{ product.description }}
             .wrapper__btns
               a(href="#").card__like
-                input(type="checkbox", name="checkHeart", :id="product.id", :value="product.id" @click="likeProduct(product.id)"  v-model="likes")
+                input(type="checkbox", name="checkHeart", :id="product.id", :value="product.id" v-model="likes")
                 label(:for="product.id")
                   i.fas.fa-heart
               a(href="#").card__buy 
@@ -85,10 +85,7 @@
      }
    },
    methods: {
-     liked(product) {
-       this.likes.push(product)
-       console.log(this.likes);
-     }
+
    }
   }
 </script>
