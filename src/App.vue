@@ -102,6 +102,7 @@ body {
           position: relative;
           margin-bottom: 30px;
           margin-top: 15px;
+          text-align: center;
 
           .title {
             text-transform: uppercase;
